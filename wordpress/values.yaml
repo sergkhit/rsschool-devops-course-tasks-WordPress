@@ -1,55 +1,54 @@
-   replicaCount: 1
+wordpress:
+  image:
+    repository: wordpress
+    tag: 5.9
+  replicas: 1
+  serviceType: NodePort
+  port: 80
+  dbHost: wordpress-mysql
+  dbName: wordpress
+  dbUser: wordpress
+  dbPassword: my-secret-password
 
-   image:
-     repository: bitnami/wordpress
-     tag: latest
-     pullPolicy: IfNotPresent
+mysql:
+  enabled: true
+  image:
+    repository: mysql
+    tag: 5.7
+  port: 3306
+  dbRootPassword: root-password
+  dbName: wordpress
+  dbUser: wordpress
+  dbPassword: my-secret-password
 
-   service:
-     type: LoadBalancer
-     port: 80
+persistence:
+  enabled: true
+  storageClassName: local-path
+  accessMode: ReadWriteOnce
+  size: 10Gi
 
-   ingress:
-     enabled: false
+  #  replicaCount: 1
 
-   wordpressUsername: admin
-   wordpressPassword: your_password
-   wordpressEmail: email@example.com
-   wordpressFirstName: Admin
-   wordpressLastName: User
+  #  image:
+  #    repository: bitnami/wordpress
+  #    tag: latest
+  #    pullPolicy: IfNotPresent
 
-   persistence:
-     enabled: true
-     accessMode: ReadWriteOnce  
-     size: 8Gi  
-     storageClassName: standard  
+  #  service:
+  #    type: LoadBalancer
+  #    port: 80
 
+  #  ingress:
+  #    enabled: false
 
-# wordpress:
-#   image:
-#     repository: wordpress
-#     tag: 5.9
-#   replicas: 1
-#   serviceType: NodePort
-#   port: 80
-#   dbHost: wordpress-mysql
-#   dbName: wordpress
-#   dbUser: wordpress
-#   dbPassword: my-secret-password
+  #  wordpressUsername: admin
+  #  wordpressPassword: your_password
+  #  wordpressEmail: email@example.com
+  #  wordpressFirstName: Admin
+  #  wordpressLastName: User
 
-# mysql:
-#   enabled: true
-#   image:
-#     repository: mysql
-#     tag: 5.7
-#   port: 3306
-#   dbRootPassword: root-password
-#   dbName: wordpress
-#   dbUser: wordpress
-#   dbPassword: my-secret-password
-
-# persistence:
-#   enabled: true
-#   storageClassName: local-path
-#   accessMode: ReadWriteOnce
-#   size: 10Gi
+  #  persistence:
+  #    enabled: true
+  #    accessMode: ReadWriteOnce  
+  #    size: 8Gi  
+  #    storageClassName: standard  
