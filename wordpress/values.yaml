@@ -27,30 +27,3 @@ persistence:
   storageClassName: local-path
   accessMode: ReadWriteOnce
   size: 10Gi
-
-
-  #  replicaCount: 1
-
-  #  image:
-  #    repository: bitnami/wordpress
-  #    tag: latest
-  #    pullPolicy: IfNotPresent
-
-  #  service:
-  #    type: LoadBalancer
-  #    port: 80
-
-  #  ingress:
-  #    enabled: false
-
-  #  wordpressUsername: admin
-  #  wordpressPassword: your_password
-  #  wordpressEmail: email@example.com
-  #  wordpressFirstName: Admin
-  #  wordpressLastName: User
-
-  #  persistence:
-  #    enabled: true
-  #    accessMode: ReadWriteOnce  
-  #    size: 8Gi  
-  #    storageClassName: standard  

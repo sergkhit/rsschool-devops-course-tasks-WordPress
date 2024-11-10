@@ -10,29 +10,4 @@ spec:
       nodePort: 32000
   selector:
     app: wordpress
-
-
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: {{ .Release.Name }}-wordpress
-# spec:
-#   type: LoadBalancer
-#   ports:
-#     - port: 80
-#       targetPort: 80
-#   selector:
-#     app: {{ .Release.Name }}-wordpress
-
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: wordpress
-# spec:
-#   type: {{ .Values.wordpress.serviceType }}
-#   ports:
-#     - port: 80
-#       targetPort: {{ .Values.wordpress.port }}
-#       nodePort: 30080
-#   selector:
-#     app: wordpress
+    
