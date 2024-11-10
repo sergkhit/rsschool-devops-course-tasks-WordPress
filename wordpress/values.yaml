@@ -1,3 +1,4 @@
+
 wordpress:
   image:
     repository: wordpress
@@ -26,6 +27,7 @@ persistence:
   storageClassName: local-path
   accessMode: ReadWriteOnce
   size: 10Gi
+
 
   #  replicaCount: 1
 
