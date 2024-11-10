@@ -9,3 +9,15 @@ spec:
     requests:
       storage: {{ .Values.persistence.size }}
   storageClassName: {{ .Values.persistence.storageClassName }}
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress-pvc
+  namespace: {{ .Values.namespace }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.wordpress.persistentVolume.size }}

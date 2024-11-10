@@ -18,6 +18,11 @@
    wordpressFirstName: Admin
    wordpressLastName: User
 
+   persistence:
+     enabled: true
+     accessMode: ReadWriteOnce  
+     size: 8Gi  
+     storageClassName: standard  
 
 
 # wordpress:

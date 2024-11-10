@@ -7,4 +7,4 @@ apiVersion: v2
 name: rs-task5-wordpress
 description: A Helm chart for WordPress on k3s
 version: 1.0.0
-appVersion: 5.9 
+# appVersion: 5.9 
